@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package whackadoge;
+package patadoge;
 
 import javax.swing.*;
 import java.awt.*;

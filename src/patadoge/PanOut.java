@@ -13,8 +13,10 @@ public class PanOut extends JPanel // panel definition
     private JLabel lblHdr;
 
     public PanOut() {
-        lblHdr = new ImageIcon("doge1.png");
-        add(lblHdr);
+        newHdr = new ImageIcon("doge1.png");
+        //add(lblHdr);
+        newHdr.getImage();
+        this.setIcon(newHdr);
 
     }
 }

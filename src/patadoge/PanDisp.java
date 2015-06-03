@@ -32,14 +32,14 @@ public class PanDisp extends JPanel implements KeyListener {
         map.put(2, 7);
         map.put(3, 8);
         this.setLayout(new GridLayout(3, 3));
-        int i = r.nextInt(9);
-        arBtnDoge[i] = new BtnDoge(i);
-        add(arBtnDoge[i]);
-//        for (int i = 0; i < arBtnDoge.length; i++) {
-//            arBtnDoge[i] = new BtnDoge(i);
-//            add(arBtnDoge[i]);
-//            //System.out.println("Button" + i +"created");
-//        }
+        //int i = r.nextInt(9);
+        //arBtnDoge[i] = new BtnDoge(i);
+        //add(arBtnDoge[i]);
+        for (int i = 0; i < arBtnDoge.length; i++) {
+            arBtnDoge[i] = new BtnDoge(i);
+            add(arBtnDoge[i]);
+            //System.out.println("Button" + i +"created");
+        }
         addKeyListener(this);
     }
 

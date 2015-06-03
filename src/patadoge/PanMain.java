@@ -10,8 +10,8 @@ public class PanMain extends JPanel // panel definition
     PanScore panScore = new PanScore();
     PanTimer panTimer = new PanTimer();
     PanRules panRules = new PanRules();
-    private PanOut PanOut;
-    private PanScore PanScore;
+    //private PanOut PanOut;
+    //private PanScore PanScore;
 
     public PanMain() {
         // this next line tells PanMain that it has a border layout.

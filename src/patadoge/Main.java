@@ -1,4 +1,3 @@
-
 package patadoge;
 
 public class Main {

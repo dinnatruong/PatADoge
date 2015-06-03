@@ -1,30 +1,20 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package patadoge;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.Color;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 
 public class PanOut extends JPanel // panel definition
 {
-
+    ImageIcon newHdr;
     int nCount;
     String sCount;
-    private JLabel lblCount;
+    private JLabel lblHdr;
 
     public PanOut() {
-        lblCount = new JLabel("0");
-        add(lblCount);
+        lblHdr = new ImageIcon("doge1.png");
+        add(lblHdr);
 
-    }
-
-    void UpdateLabel(int _nCount) {
-        nCount = _nCount;
-        sCount = Integer.toString(nCount);
-        lblCount.setText(sCount);
     }
 }

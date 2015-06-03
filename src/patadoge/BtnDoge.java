@@ -1,25 +1,35 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package patadoge;
 
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
-/**
- *
- * @author tomkc2421
- */
-public class BtnDoge extends JButton{
+public class BtnDoge extends JButton {
+
     ImageIcon newdoge;
-    
-    BtnDoge(String file){
-        newdoge = new ImageIcon(file);
+    ImageIcon newerdoge;
+    int iFlip;
+    int nNum;
+
+    BtnDoge(int _nNum) {
+        nNum = _nNum;
+        iFlip = 1;
+        newdoge = new ImageIcon("doge1.png");
+        //setActionCommmand(sNum);
         newdoge.getImage();
+        newerdoge = new ImageIcon("doge2.png");
+        newerdoge.getImage();
         this.setIcon(newdoge);
-        this.setBackground(new Color(248,190,169));
+        this.setBackground(new Color(248, 190, 169));
     }
-    
+
+    void flip() {
+
+        if (iFlip == 1) {
+            setIcon(newerdoge);
+        } else {
+            setIcon(newdoge);
+        }
+        iFlip *= -1;
+    }
 }

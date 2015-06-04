@@ -1,31 +1,29 @@
 package patadoge;
 
 import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
+//import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class PanOut extends JPanel {
 
     ImageIcon imgHeader;
-    JButton btnHeader;
+//    JButton btnHeader;
+    JLabel lblHeader;
 
     public PanOut() {
-        btnHeader = new JButton();
+          lblHeader = new JLabel();
+
         imgHeader = new ImageIcon("dogeheader.jpg");
-        imgHeader.getImage();
+        lblHeader.setIcon(imgHeader);
+        add(lblHeader);
         this.setBackground(new Color(248, 190, 169));
-
-
-        btnHeader.setIcon(imgHeader);
-        add(btnHeader);
+        
+//        btnHeader = new JButton();
+//        imgHeader.getImage();
+        //btnHeader.setIcon(imgHeader);
+       // add(btnHeader);
 
 
     }

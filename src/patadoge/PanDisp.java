@@ -18,10 +18,10 @@ public class PanDisp extends JPanel implements KeyListener {
     BtnDoge btn2;
     BtnDoge arBtnDoge[] = new BtnDoge[9];
     Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-    Random r = new Random();
     Timer timer;
     int nTimer;
     PanTimer panTimer;
+    int rDoge;
 
     public PanDisp(PanTimer _panTimer) {
         //System.out.println("panDisp Created");
@@ -53,6 +53,12 @@ public class PanDisp extends JPanel implements KeyListener {
         addKeyListener(this);
     }
 
+    //randomize doge
+   // public void randomize(){
+  //      Random r = new Random();
+  //      rDoge = r.nextInt(9);
+  //  }
+    
     @Override
     public void keyTyped(KeyEvent e) {
     }
@@ -66,6 +72,11 @@ public class PanDisp extends JPanel implements KeyListener {
         Integer value = map.get(nNewKey);
         System.out.println(nNewKey);
         //System.out.println("ouch");
+   //     randomize();
+    //    if (value == rDoge) {
+    //        System.out.println("yah");
+      //  }
+        
         try {
             arBtnDoge[value].flip();
         } catch (Exception error) {

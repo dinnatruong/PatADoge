@@ -10,7 +10,5 @@ public class PanScore extends JPanel // panel definition
     public PanScore() {
         lblScore = new JLabel("Score");
         add(lblScore);
-
     }
-
 }

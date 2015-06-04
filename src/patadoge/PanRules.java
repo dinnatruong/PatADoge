@@ -24,7 +24,11 @@ public class PanRules extends JPanel // panel definition
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(frame, "[insert rules here]");
+            JOptionPane.showMessageDialog(frame, "Use your numpad (MAKE SURE"
+                    + " NUMLOCK IS ON) to pat the doges. If you collect"
+                    + " sufficient points in 15 seconds you'll move onto the"
+                    + " next level. WARNING: DO NOT CLICK THE DOGES. IT'LL MESS"
+                    + " UP YOUR WHOLE GAME.");
         }
     }
 }

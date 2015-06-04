@@ -48,16 +48,18 @@ public class PanDisp extends JPanel implements KeyListener {
         for (int i = 0; i < arBtnDoge.length; i++) {
             arBtnDoge[i] = new BtnDoge(i);
             add(arBtnDoge[i]);
+       //     randomize();
             //System.out.println("Button" + i +" created");
         }
         addKeyListener(this);
     }
 
     //randomize doge
-   // public void randomize(){
-  //      Random r = new Random();
-  //      rDoge = r.nextInt(9);
-  //  }
+    public void randomize(){
+        Random r = new Random();
+        rDoge = r.nextInt(9);
+        System.out.println("Yah");
+    }
     
     @Override
     public void keyTyped(KeyEvent e) {
@@ -73,10 +75,6 @@ public class PanDisp extends JPanel implements KeyListener {
         System.out.println(nNewKey);
         //System.out.println("ouch");
    //     randomize();
-    //    if (value == rDoge) {
-    //        System.out.println("yah");
-      //  }
-        
         try {
             arBtnDoge[value].flip();
         } catch (Exception error) {

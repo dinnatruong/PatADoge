@@ -11,6 +11,7 @@ public class FraMain extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         add(panMain);
         setVisible(true);
+        setResizable(false);
 
     }
 }

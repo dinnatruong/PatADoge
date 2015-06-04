@@ -4,6 +4,8 @@ import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.HashMap;
@@ -17,9 +19,17 @@ public class PanDisp extends JPanel implements KeyListener {
     BtnDoge arBtnDoge[] = new BtnDoge[9];
     Map<Integer, Integer> map = new HashMap<Integer, Integer>();
     Random r = new Random();
+    Timer timer;
+    int nTimer;
+    PanTimer panTimer;
 
-    public PanDisp(PanOut _panOut) {
+    public PanDisp(PanTimer _panTimer) {
         //System.out.println("panDisp Created");
+        panTimer = _panTimer;
+        timer = new Timer(1000, updateTask);
+        nTimer = 0;
+        timer.start();
+        
         setFocusable(true);
         requestFocus();
         map.put(7, 0);
@@ -38,7 +48,7 @@ public class PanDisp extends JPanel implements KeyListener {
         for (int i = 0; i < arBtnDoge.length; i++) {
             arBtnDoge[i] = new BtnDoge(i);
             add(arBtnDoge[i]);
-            //System.out.println("Button" + i +"created");
+            //System.out.println("Button" + i +" created");
         }
         addKeyListener(this);
     }
@@ -65,4 +75,14 @@ public class PanDisp extends JPanel implements KeyListener {
     @Override
     public void keyReleased(KeyEvent e) {
     }
+    
+    ActionListener updateTask = new ActionListener() {
+         @Override
+         public void actionPerformed(ActionEvent evt) {
+             nTimer++; 
+             panTimer.UpdateLabel(nTimer);
+             System.out.println(nTimer);
+         }
+      };
 }
+

@@ -11,6 +11,7 @@ public class PanTimer extends JPanel // panel definition
     public PanTimer() {
         lblCount = new JLabel("0");
         add(lblCount);
+        
     }
     void UpdateLabel(int _nTimer) {
         nTimer = _nTimer;

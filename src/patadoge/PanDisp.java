@@ -22,6 +22,7 @@ public class PanDisp extends JPanel implements KeyListener {
     int nTimer;
     PanTimer panTimer;
     int rDoge;
+    Random r = new Random();
 
     public PanDisp(PanTimer _panTimer) {
         //System.out.println("panDisp Created");
@@ -29,7 +30,7 @@ public class PanDisp extends JPanel implements KeyListener {
         timer = new Timer(1000, updateTask);
         nTimer = 0;
         timer.start();
-        
+
         setFocusable(true);
         requestFocus();
         map.put(7, 0);
@@ -48,25 +49,29 @@ public class PanDisp extends JPanel implements KeyListener {
         for (int i = 0; i < arBtnDoge.length; i++) {
             arBtnDoge[i] = new BtnDoge(i);
             add(arBtnDoge[i]);
-       //     randomize();
+            //     randomize();
             //System.out.println("Button" + i +" created");
         }
+        randomize();
         addKeyListener(this);
     }
 
     //randomize doge
-    public void randomize(){
-        Random r = new Random();
+    public void randomize() {
         rDoge = r.nextInt(9);
-        System.out.println("Yah");
+        //System.out.println("Yah");
+        try {
+            arBtnDoge[rDoge].flip();
+        } catch (Exception error) {
+        }
     }
-    
-    @Override
-    public void keyTyped(KeyEvent e) {
+
+@Override
+        public void keyTyped(KeyEvent e) {
     }
 
     @Override
-    public void keyPressed(KeyEvent e) {
+        public void keyPressed(KeyEvent e) {
 //        Integer index = 9;
 //        map.put(index, value + 1);
         int nKey = e.getKeyCode();
@@ -81,16 +86,15 @@ public class PanDisp extends JPanel implements KeyListener {
     }
 
     @Override
-    public void keyReleased(KeyEvent e) {
+        public void keyReleased(KeyEvent e) {
     }
     
     ActionListener updateTask = new ActionListener() {
          @Override
-         public void actionPerformed(ActionEvent evt) {
+        public void actionPerformed(ActionEvent evt) {
              nTimer++; 
              panTimer.UpdateLabel(nTimer);
              //System.out.println(nTimer);
          }
       };
 }
-

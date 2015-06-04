@@ -72,8 +72,7 @@ public class PanDisp extends JPanel implements KeyListener {
         int nKey = e.getKeyCode();
         int nNewKey = nKey - 96;
         Integer value = map.get(nNewKey);
-        System.out.println(nNewKey);
-        //System.out.println("ouch");
+        //System.out.println(nNewKey);
    //     randomize();
         try {
             arBtnDoge[value].flip();
@@ -90,7 +89,7 @@ public class PanDisp extends JPanel implements KeyListener {
          public void actionPerformed(ActionEvent evt) {
              nTimer++; 
              panTimer.UpdateLabel(nTimer);
-             System.out.println(nTimer);
+             //System.out.println(nTimer);
          }
       };
 }

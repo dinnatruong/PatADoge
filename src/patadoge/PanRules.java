@@ -1,5 +1,6 @@
 package patadoge;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,6 +16,7 @@ public class PanRules extends JPanel // panel definition
         add(btnRules);
         AL rules = new AL();
         btnRules.addActionListener(rules);
+        this.setBackground(new Color(248, 190, 169));
     }
 
     class AL implements ActionListener {

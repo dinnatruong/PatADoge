@@ -1,5 +1,6 @@
 package patadoge;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -20,6 +21,7 @@ public class PanOut extends JPanel {
         btnHeader = new JButton();
         imgHeader = new ImageIcon("dogeheader.jpg");
         imgHeader.getImage();
+        this.setBackground(new Color(248, 190, 169));
 
 
         btnHeader.setIcon(imgHeader);

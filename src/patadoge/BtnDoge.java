@@ -20,7 +20,7 @@ public class BtnDoge extends JButton {
         newerdoge = new ImageIcon("doge2.png");
         newerdoge.getImage();
         this.setIcon(newdoge);
-        this.setBackground(new Color(248, 190, 169));
+        this.setBackground(new Color(252, 154, 134));
     }
 
     void flip() {

@@ -58,27 +58,32 @@ public class PanDisp extends JPanel implements KeyListener {
 
     //randomize doge
     public void randomize() {
-        rDoge = r.nextInt(9);
-        //System.out.println("Yah");
-        try {
-            arBtnDoge[rDoge].flip();
-        } catch (Exception error) {
+        while(nTimer % 2 == 0) {
+            rDoge = r.nextInt(9);
+            if (rDoge > 1){
+                break;
+            }
+                //System.out.println("Yah");
+                try {
+                    arBtnDoge[rDoge].flip();
+                } catch (Exception error) {               
+            }
         }
     }
 
-@Override
-        public void keyTyped(KeyEvent e) {
+    @Override
+    public void keyTyped(KeyEvent e) {
     }
 
     @Override
-        public void keyPressed(KeyEvent e) {
+    public void keyPressed(KeyEvent e) {
 //        Integer index = 9;
 //        map.put(index, value + 1);
         int nKey = e.getKeyCode();
         int nNewKey = nKey - 96;
         Integer value = map.get(nNewKey);
         //System.out.println(nNewKey);
-   //     randomize();
+        //     randomize();
         try {
             arBtnDoge[value].flip();
         } catch (Exception error) {
@@ -86,15 +91,15 @@ public class PanDisp extends JPanel implements KeyListener {
     }
 
     @Override
-        public void keyReleased(KeyEvent e) {
+    public void keyReleased(KeyEvent e) {
     }
-    
+
     ActionListener updateTask = new ActionListener() {
-         @Override
+        @Override
         public void actionPerformed(ActionEvent evt) {
-             nTimer++; 
-             panTimer.UpdateLabel(nTimer);
-             //System.out.println(nTimer);
-         }
-      };
+            nTimer++;
+            panTimer.UpdateLabel(nTimer);
+            //System.out.println(nTimer);
+        }
+    };
 }

@@ -5,6 +5,7 @@ import javax.swing.*;
 
 public class PanTimer extends JPanel // timer
 {
+
     int nTimer;
     String sTimer;
     private JLabel lblCount;
@@ -14,6 +15,7 @@ public class PanTimer extends JPanel // timer
         add(lblCount);
         this.setBackground(new Color(248, 190, 169));
     }
+
     void UpdateLabel(int _nTimer) {
         nTimer = _nTimer;
         sTimer = Integer.toString(nTimer);

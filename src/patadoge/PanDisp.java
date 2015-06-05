@@ -75,7 +75,7 @@ public class PanDisp extends JPanel implements KeyListener {
             arBtnDoge[value].flip();
             nScore++;
             System.out.println(nScore);
-       PanScore.UpdateScoreLabel(nScore);           
+            PanScore.UpdateScoreLabel(nScore);
         } catch (Exception error) {
         }
 //        if (dogeShown && value == ranDoge) {

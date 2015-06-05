@@ -17,7 +17,7 @@ public class PanScore extends JPanel // scoreboard
         add(lblScore);
         this.setBackground(new Color(248, 190, 169));
     }
-    
+
     public static void UpdateScoreLabel(int _nScore) {
         nScore = _nScore;
         sScore = Integer.toString(nScore);

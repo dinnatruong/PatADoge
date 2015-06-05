@@ -12,6 +12,7 @@ public class BtnDoge extends JButton {
     int nNum;
     boolean dogeShown;
     int rDoge;
+    int j;
 
     BtnDoge(int _nNum) {
         nNum = _nNum;
@@ -27,8 +28,8 @@ public class BtnDoge extends JButton {
 
     }
 
+    //flip the doge images
     void flip() {
-
         if (iFlip == 1) {
             setIcon(newdoge);
             dogeShown = true;

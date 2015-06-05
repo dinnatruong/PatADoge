@@ -3,7 +3,7 @@ package patadoge;
 import java.awt.Color;
 import javax.swing.*;
 
-public class PanTimer extends JPanel // panel definition
+public class PanTimer extends JPanel // timer
 {
     int nTimer;
     String sTimer;

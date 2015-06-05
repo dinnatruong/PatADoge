@@ -3,7 +3,7 @@ package patadoge;
 import java.awt.Color;
 import javax.swing.*;
 
-public class PanScore extends JPanel // panel definition
+public class PanScore extends JPanel // scoreboard
 {
 
     private JLabel lblScore;

@@ -6,13 +6,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
-public class PanRules extends JPanel // panel definition
+public class PanRules extends JPanel // displays rules if button is clicked
 {
     JButton btnRules;
 
     public PanRules() {
         
         btnRules = new JButton("Rules");
+        btnRules.setFocusable(false);
         add(btnRules);
         AL rules = new AL();
         btnRules.addActionListener(rules);

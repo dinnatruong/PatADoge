@@ -1,8 +1,5 @@
 package patadoge;
 
-import java.util.Random;
-import javax.swing.ImageIcon;
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,10 +7,11 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
+import javax.swing.*;
 
 public class PanDisp extends JPanel implements KeyListener {
 
-    ImageIcon newdoge;
     BtnDoge btn;
     BtnDoge btn2;
     BtnDoge arBtnDoge[] = new BtnDoge[9];
@@ -26,10 +24,9 @@ public class PanDisp extends JPanel implements KeyListener {
     Random r = new Random();
 
     public PanDisp(PanTimer _panTimer) {
-        //System.out.println("panDisp Created");
         panTimer = _panTimer;
         timer = new Timer(1000, updateTask);
-        timerDoge = new Timer(1500, updateDoge);
+        timerDoge = new Timer(1500, updateDoge); //timer to randomize doge pop ups
         nTimer = 0;
         timer.start();
         timerDoge.start();

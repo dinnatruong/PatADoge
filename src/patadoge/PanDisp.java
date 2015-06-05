@@ -22,6 +22,7 @@ public class PanDisp extends JPanel implements KeyListener {
     int ranDoge;
     int nScore;
     Random r = new Random();
+//    boolean dogeShown;
 
     public PanDisp(PanTimer _panTimer) {
         panTimer = _panTimer;
@@ -48,17 +49,17 @@ public class PanDisp extends JPanel implements KeyListener {
             add(arBtnDoge[i]);
             //System.out.println("Button" + i +" created");
         }
-      //  randomize();
+        //  randomize();
         addKeyListener(this);
     }
 
     //randomize doge
     public void randomize() {
-            ranDoge = r.nextInt(9);
-                try {
-                    arBtnDoge[ranDoge].flip();
-                } catch (Exception error) {               
-            }
+        ranDoge = r.nextInt(9);
+        try {
+            arBtnDoge[ranDoge].flip();
+        } catch (Exception error) {
+        }
     }
 
     @Override
@@ -70,32 +71,39 @@ public class PanDisp extends JPanel implements KeyListener {
         int nKey = e.getKeyCode();
         int nNewKey = nKey - 96;
         Integer value = map.get(nNewKey);
-        nScore++;
         try {
             arBtnDoge[value].flip();
+            nScore++;
+            System.out.println(nScore);
+       PanScore.UpdateScoreLabel(nScore);           
         } catch (Exception error) {
         }
+//        if (dogeShown && value == ranDoge) {
+//            nScore++;
+//            System.out.println(nScore);
+//            PanScore.UpdateScoreLabel(nScore);
+//        } else if (!dogeShown || value != ranDoge) {
+//            System.out.println("Miss");
+//        }
+
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
     }
-
     ActionListener updateTask = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent evt) {
             nTimer++;
-           // randomize();
+            // randomize();
             panTimer.UpdateLabel(nTimer);
             //System.out.println(nTimer);
         }
     };
-    
-        ActionListener updateDoge = new ActionListener() {
+    ActionListener updateDoge = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent evt) {
             randomize();
         }
     };
-    
 }

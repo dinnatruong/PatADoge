@@ -18,11 +18,10 @@ public class PanOut extends JPanel {
         add(lblHeader);
         this.setBackground(new Color(248, 190, 169));
 
+//        header as a button does not work
 //        btnHeader = new JButton();
 //        imgHeader.getImage();
 //        btnHeader.setIcon(imgHeader);
 //        add(btnHeader);
-
-
     }
 }

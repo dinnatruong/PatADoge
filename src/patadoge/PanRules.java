@@ -26,9 +26,9 @@ public class PanRules extends JPanel // displays rules if button is clicked
         @Override
         public void actionPerformed(ActionEvent e) {
             JOptionPane.showMessageDialog(frame, "Use your numpad to pat the"
-                    + " doges before they disappear. If you collect"
-                    + " sufficient points in 15 seconds you'll move onto the"
-                    + " next level. \n WARNING: MAKE SURE NUMLOCK IS ON. DO NOT CLICK THE DOGES!!");
+                    + " doges before they disappear. The objective is to get as"
+                    + " many points as you possibly can."
+                    + "\n WARNING: MAKE SURE NUMLOCK IS ON. DO NOT CLICK THE DOGES!!");
         }
     }
 }

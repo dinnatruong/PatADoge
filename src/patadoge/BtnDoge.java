@@ -12,7 +12,6 @@ public class BtnDoge extends JButton {
     int nNum;
     boolean dogeShown;
     int rDoge;
-    int j;
 
     BtnDoge(int _nNum) {
         nNum = _nNum;

@@ -6,31 +6,35 @@ import javax.swing.JButton;
 
 public class BtnDoge extends JButton {
 
+    ImageIcon blankbg;
     ImageIcon newdoge;
-    ImageIcon newerdoge;
     int iFlip;
     int nNum;
+    boolean dogeShown;
+    int rDoge;
 
     BtnDoge(int _nNum) {
         nNum = _nNum;
         iFlip = 1;
-        newdoge = new ImageIcon("doge1.png");
+        blankbg = new ImageIcon("blankbg.png");
         //setActionCommmand(sNum);
+        blankbg.getImage();
+        newdoge = new ImageIcon("doge1.png");
         newdoge.getImage();
-        newerdoge = new ImageIcon("doge2.png");
-        newerdoge.getImage();
-        this.setIcon(newdoge);
+        this.setIcon(blankbg);
         this.setBackground(new Color(252, 154, 134));
-        //this.setIcon(newerdoge);
-        
+        //this.setIcon(newdoge);
+
     }
 
     void flip() {
 
         if (iFlip == 1) {
-            setIcon(newerdoge);
-        } else {
             setIcon(newdoge);
+            dogeShown = true;
+        } else {
+            setIcon(blankbg);
+            dogeShown = false;
         }
         iFlip *= -1;
     }

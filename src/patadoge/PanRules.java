@@ -24,11 +24,10 @@ public class PanRules extends JPanel // panel definition
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(frame, "Use your numpad (MAKE SURE"
-                    + " NUMLOCK IS ON) to pat the doges. If you collect"
+            JOptionPane.showMessageDialog(frame, "Use your numpad to pat the"
+                    + " doges before they disappear. If you collect"
                     + " sufficient points in 15 seconds you'll move onto the"
-                    + " next level. \n WARNING: DO NOT CLICK THE DOGES. IT'LL"
-                    + " MESS UP YOUR WHOLE GAME.");
+                    + " next level. \n WARNING: MAKE SURE NUMLOCK IS ON. DO NOT CLICK THE DOGES!!");
         }
     }
 }

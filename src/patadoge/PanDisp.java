@@ -18,18 +18,21 @@ public class PanDisp extends JPanel implements KeyListener {
     BtnDoge btn2;
     BtnDoge arBtnDoge[] = new BtnDoge[9];
     Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-    Timer timer;
+    Timer timer, timerDoge;
     int nTimer;
     PanTimer panTimer;
-    int rDoge;
+    int ranDoge;
+    int nScore;
     Random r = new Random();
 
     public PanDisp(PanTimer _panTimer) {
         //System.out.println("panDisp Created");
         panTimer = _panTimer;
         timer = new Timer(1000, updateTask);
+        timerDoge = new Timer(1500, updateDoge);
         nTimer = 0;
         timer.start();
+        timerDoge.start();
 
         setFocusable(true);
         requestFocus();
@@ -43,32 +46,22 @@ public class PanDisp extends JPanel implements KeyListener {
         map.put(2, 7);
         map.put(3, 8);
         this.setLayout(new GridLayout(3, 3));
-        //int i = r.nextInt(9);
-        //arBtnDoge[i] = new BtnDoge(i);
-        //add(arBtnDoge[i]);
         for (int i = 0; i < arBtnDoge.length; i++) {
             arBtnDoge[i] = new BtnDoge(i);
             add(arBtnDoge[i]);
-            //     randomize();
             //System.out.println("Button" + i +" created");
         }
-        randomize();
+      //  randomize();
         addKeyListener(this);
     }
 
     //randomize doge
     public void randomize() {
-        while(nTimer % 2 == 0) {
-            rDoge = r.nextInt(9);
-            if (rDoge > 1){
-                break;
-            }
-                //System.out.println("Yah");
+            ranDoge = r.nextInt(9);
                 try {
-                    arBtnDoge[rDoge].flip();
+                    arBtnDoge[ranDoge].flip();
                 } catch (Exception error) {               
             }
-        }
     }
 
     @Override
@@ -77,13 +70,10 @@ public class PanDisp extends JPanel implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-//        Integer index = 9;
-//        map.put(index, value + 1);
         int nKey = e.getKeyCode();
         int nNewKey = nKey - 96;
         Integer value = map.get(nNewKey);
-        //System.out.println(nNewKey);
-        //     randomize();
+        nScore++;
         try {
             arBtnDoge[value].flip();
         } catch (Exception error) {
@@ -98,8 +88,17 @@ public class PanDisp extends JPanel implements KeyListener {
         @Override
         public void actionPerformed(ActionEvent evt) {
             nTimer++;
+           // randomize();
             panTimer.UpdateLabel(nTimer);
             //System.out.println(nTimer);
         }
     };
+    
+        ActionListener updateDoge = new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent evt) {
+            randomize();
+        }
+    };
+    
 }

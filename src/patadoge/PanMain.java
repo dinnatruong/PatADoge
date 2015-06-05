@@ -9,7 +9,7 @@ public class PanMain extends JPanel // panel definition
     PanOut panOut = new PanOut();
     PanTimer panTimer = new PanTimer();
     PanDisp panDisp = new PanDisp(panTimer);
-    PanScore panScore = new PanScore();
+    PanScore panScore = new PanScore(panDisp);
     PanRules panRules = new PanRules();
     //private PanOut PanOut;
     //private PanScore PanScore;

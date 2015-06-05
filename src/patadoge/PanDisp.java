@@ -15,7 +15,7 @@ public class PanDisp extends JPanel implements KeyListener {
     BtnDoge btn;
     BtnDoge btn2;
     BtnDoge arBtnDoge[] = new BtnDoge[9];
-    Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+    Map<Integer, Integer> map = new HashMap<>();
     Timer timer, timerDoge;
     int nTimer;
     PanTimer panTimer;
